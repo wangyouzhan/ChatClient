@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by wangyouzhan on 2016/11/20.
@@ -57,9 +58,11 @@ public class Imageloader {
      */
     private Handler mUIHandler;
 
+    private Semaphore mSemaphorePoolThreadHandler = new Semaphore(0);
+
 
     public enum Type {
-        FIFO, FILO;
+        FIFO, LIFO;
     }
 
 
@@ -88,6 +91,9 @@ public class Imageloader {
                         mThreadPool.execute(getTask());
                     }
                 };
+                //释放一个信号量
+                mSemaphorePoolThreadHandler.release();
+                Looper.loop();
             }
         };
 
@@ -119,7 +125,7 @@ public class Imageloader {
 
         if (mType == Type.FIFO) {
             return mTaskQueue.removeFirst();
-        } else if (mType == Type.FILO) {
+        } else if (mType == Type.LIFO) {
             return mTaskQueue.removeLast();
         }
         return null;
@@ -322,6 +328,16 @@ public class Imageloader {
 
     private void addTasks(Runnable runnable) {
         mTaskQueue.add(runnable);
+
+        //if(mPoolThreadHandler == null) wait();
+
+        try {
+            mSemaphorePoolThreadHandler.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
         mPoolThreadHandler.sendEmptyMessage(0x110);
     }
 
