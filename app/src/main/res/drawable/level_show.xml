@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:drawable="@mipmap/icon_app"
+        android:minLevel="2"
+        android:maxLevel="8">
+    </item>
+
+
+    <item
+        android:drawable="@mipmap/haizewang_2"
+        android:minLevel="8"
+        android:maxLevel="10">
+    </item>
+
+
+
+
+</level-list>

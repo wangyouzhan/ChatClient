@@ -1,0 +1,24 @@
+Last login: Wed Sep 28 09:54:25 on ttys001
+wangyouzhandeMacBook-Pro:~ wangyouzhan$ telnet localhost 51234
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+asdf
+asdfasd阿萨德
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

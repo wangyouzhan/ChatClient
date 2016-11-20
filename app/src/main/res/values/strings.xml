@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ChatClient</string>
+    <string name="title_activity_read_file">ReadFileActivity</string>
+    <string name="title_activity_activity">ActivityA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scan">scan</string>
+    <string name="scan_gbk">scan_gbk</string>
+    <string name="scan_utf_8">scan_utf_8</string>
+
+
+</resources>

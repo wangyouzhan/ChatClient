@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_view_page_indicator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="微信" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转" />
+
+
+        <Button
+            android:id="@+id/btn_skip_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分配内存" />
+
+        <Button
+            android:id="@+id/btn_get_package"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取包名" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textview_show"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_dark" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@android:color/holo_blue_light" />
+
+
+</LinearLayout>

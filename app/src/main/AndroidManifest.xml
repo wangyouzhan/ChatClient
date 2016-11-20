@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.imooc.wangyouzhan.chatclient"
+          android:versionCode="1200"
+          android:versionName="2.0">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="23"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".ReadFileActivity"
+            android:label="@string/title_activity_read_file"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ViewMoveActivity"
+            android:label="mainTwo"/>
+        <activity
+            android:name=".ContextTestActivity"
+            android:label="mainThreee"/>
+        <activity android:name=".DrawableActivity"/>
+        <activity
+            android:name=".ActivityA"
+            android:label="@string/title_activity_activity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".ActivityB"/>
+        <activity android:name=".ActivityC"/>
+        <activity
+            android:name=".FragmentActivity"
+            android:label="@string/title_activity_read_file"/>
+        <activity android:name=".ScrollActivity"/>
+        <activity android:name=".Activity.ImageChangeActivity"/>
+        <activity android:name=".Activity.CustomeHanderActivity"/>
+        <activity android:name=".Activity.ViewPageIndicatorActivity"/>
+        <activity android:name=".Activity.SharePreferenceActivity"/>
+        <activity
+            android:name=".Activity.MainActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".Activity.BActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".Activity.RecycleViewActivity"/>
+        <activity android:name=".Activity.RoundDrawableActivity"/>
+        <activity android:name=".WeightBugActivity"/>
+
+        <service
+            android:name=".TestIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.imooc.wangyouzhan.chatclient.TestIntentService"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".IntentServiceActivity"/>
+        <activity android:name=".DataTranslantActivity"/>
+        <activity
+            android:name=".DataSaveActivity"
+            android:launchMode="standard">
+            <intent-filter>
+                <action android:name="www.wang.com"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".TreeWiget.TreeViewActivity"/>
+        <activity android:name=".generic.GenricActivity"/>
+        <activity android:name=".asynloader.AsynLoaderActivity">
+        </activity>
+        <activity android:name=".recycleview.RecycleViewActivity">
+        </activity>
+        <activity android:name=".notification.MessengerTestActivity">
+        </activity>
+
+        <service android:name=".notification.DownloadService"/>
+        <service
+            android:name=".aidl.IRemoteService"
+            android:exported="true"
+            android:process=":remote"/>
+
+        <activity android:name=".aidl.AidlTestAcitivity">
+        </activity>
+        <activity android:name=".sqlite.SqliteActivity">
+        </activity>
+        <activity android:name=".zxing.ZxingActivity">
+        </activity>
+        <activity android:name=".zxing.CaptureResultActivity"/>
+        <activity android:name=".viewpagerindicator.ViewPagerActivity">
+        </activity>
+        <activity android:name=".camera.CameraActivity">
+
+        </activity>
+        <activity android:name=".camera.CustomCameraActivity">
+        </activity>
+        <activity android:name=".camera.ResultActivity">
+        </activity>
+        <activity android:name=".previewphotos.PreviewPhotosActivity">
+
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

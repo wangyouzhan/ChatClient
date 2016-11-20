@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_genric"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<com.imooc.wangyouzhan.chatclient.generic.MaskRoundImageView-->
+        <!--android:id="@+id/imageview"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="100dp" />-->
+
+    <!--<com.imooc.wangyouzhan.chatclient.generic.BitmapShaderView-->
+        <!--android:id="@+id/shader"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/imageview"/>-->
+
+    <!--<com.imooc.wangyouzhan.chatclient.generic.ReflectView-->
+        <!--android:layout_below="@id/imageview"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <com.imooc.wangyouzhan.chatclient.generic.MeshView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btn_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="确定"/>
+
+
+</RelativeLayout>
