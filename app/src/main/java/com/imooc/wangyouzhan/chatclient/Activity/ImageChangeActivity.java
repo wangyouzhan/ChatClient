@@ -21,7 +21,7 @@ public class ImageChangeActivity extends AppCompatActivity {
         String name;
     }
 
-    private int images[] = {R.mipmap.activity_live_active, R.mipmap.activity_shop_active, R.mipmap.activity_star_active};
+    private int images[] = {R.mipmap.activity_live_active, R.mipmap.activity_shop_active_9, R.mipmap.activity_star_active};
 
     private ImageView image_view;
     private Handler handler = new Handler(
