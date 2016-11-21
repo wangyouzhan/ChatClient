@@ -10,6 +10,7 @@ import android.util.DisplayMetrics;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -18,6 +19,37 @@ import java.util.concurrent.Semaphore;
 /**
  * Created by wangyouzhan on 2016/11/20.
  * Email 936804097@qq.com
+ * <p>
+ * getView()
+ * {
+ * url -> Bitmap
+ * url -> LruCache 查找
+ * -> 找到返回
+ * -> 找不到的 url->Task->TaskQueue且发送一个通知去
+ * 提醒后台轮询线程
+ * <p>
+ * }
+ * <p>
+ * Task->run(){ 根据url加载图片:
+ * 1、获得图片显示的大小
+ * 2、使用Options对图片进行压缩
+ * 3、加载图片且放入LruCache
+ * 后台轮询线程
+ * TaskQueue->Task->线程池去执行
+ * new Thread(){
+ * run(){
+ * while(true){
+ * <p>
+ * }
+ * }
+ * <p>
+ * }.start();我们没有采用
+ * Handler + Looper + Message
+ * }
+ * <p>
+ * Task -> TaskQueue-> 通知后台线程池->把Task放入到它的内部任务队列
+ * 修改
+ * 使用信号量
  */
 
 public class Imageloader {
@@ -60,6 +92,8 @@ public class Imageloader {
 
     private Semaphore mSemaphorePoolThreadHandler = new Semaphore(0);
 
+    private Semaphore mSemaphoneThreadPool;
+
 
     public enum Type {
         FIFO, LIFO;
@@ -89,6 +123,12 @@ public class Imageloader {
                     public void handleMessage(Message msg) {
                         //线程池取出一个任务进行执行
                         mThreadPool.execute(getTask());
+
+                        try {
+                            mSemaphoneThreadPool.acquire();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 };
                 //释放一个信号量
@@ -113,6 +153,8 @@ public class Imageloader {
         mThreadPool = Executors.newFixedThreadPool(threadCount);
         mTaskQueue = new LinkedList<Runnable>();
         mType = type;
+
+        mSemaphoneThreadPool = new Semaphore(threadCount);
     }
 
 
@@ -138,12 +180,12 @@ public class Imageloader {
      *
      * @return
      */
-    public static Imageloader getInstance() {
+    public static Imageloader getInstance(int threadCount, Type type) {
 
         if (mInstance == null) {
             synchronized (Imageloader.class) {
                 if (mInstance == null) {
-                    mInstance = new Imageloader(DEAFULT_THREAD_COUNT, Type.FIFO);
+                    mInstance = new Imageloader(threadCount, type);
                 }
             }
         }
@@ -197,6 +239,7 @@ public class Imageloader {
 
                     refreashBitmap(bm, path, imageView);
 
+                    mSemaphoneThreadPool.release();
                 }
             });
         }
@@ -298,7 +341,8 @@ public class Imageloader {
         }
 
         if (width <= 0) {
-            width = imageView.getMaxWidth();//检查最大值
+//            width = imageView.getMaxWidth();//检查最大值
+            width =     getImageFieldValue(imageView, "mMaxWidth");
         }
 
         if (width <= 0) {
@@ -313,7 +357,8 @@ public class Imageloader {
         }
 
         if (width <= 0) {
-            height = imageView.getMaxHeight();//检查最大值
+//            height = imageView.getMaxHeight();//检查最大值
+            height = getImageFieldValue(imageView, "mMaxHeight");
         }
 
         if (width <= 0) {
@@ -326,13 +371,43 @@ public class Imageloader {
         return imageSize;
     }
 
+
+    /**
+     * 通过反射获取imageview的某个值
+     *
+     * @param fieldName
+     * @param fieldName
+     * @return
+     */
+    private static int getImageFieldValue(Object object, String fieldName) {
+
+        int value = 0;
+
+        try
+        {
+            Field field = ImageView.class.getDeclaredField(fieldName);
+            field.setAccessible(true);
+
+            int fieldValue = field.getInt(object);
+            if (fieldValue > 0 && fieldValue < Integer.MAX_VALUE) {
+                value = fieldValue;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return value;
+    }
+
     private void addTasks(Runnable runnable) {
         mTaskQueue.add(runnable);
 
         //if(mPoolThreadHandler == null) wait();
 
         try {
-            mSemaphorePoolThreadHandler.acquire();
+            if (mPoolThreadHandler == null) {
+                mSemaphorePoolThreadHandler.acquire();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
