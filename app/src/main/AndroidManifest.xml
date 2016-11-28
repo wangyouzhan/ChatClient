@@ -18,7 +18,6 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.re"/>
 
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -107,20 +106,24 @@
         <activity android:name=".viewpagerindicator.ViewPagerActivity">
         </activity>
         <activity android:name=".camera.CameraActivity">
-
         </activity>
         <activity android:name=".camera.CustomCameraActivity">
         </activity>
         <activity android:name=".camera.ResultActivity">
         </activity>
         <activity android:name=".previewphotos.PreviewPhotosActivity">
+        </activity>
+        <activity android:name=".recycleview.RefreshRecyclerViewActivity">
+        </activity>
+        <activity android:name=".view.ScrollerViewActivity">
 
+        </activity>
+        <activity android:name=".scratch.ScatchActivity">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER"/>
-
                 <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

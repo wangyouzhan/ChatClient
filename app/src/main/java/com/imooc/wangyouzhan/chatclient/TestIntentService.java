@@ -15,6 +15,8 @@ public class TestIntentService extends IntentService {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+
+
         System.out.println("onbind-----------------");
         Log.d(TAG, "onBind: fa");
         Log.d(TAG, "onBind() called with: intent = [" + intent + "]");
@@ -30,6 +32,8 @@ public class TestIntentService extends IntentService {
     @Override
     public void onCreate() {
         super.onCreate();
+
+
         System.out.print("oncreate-----------------");
     }
 

@@ -22,6 +22,8 @@ public class ActivityA extends AppCompatActivity{
 //                intent.setClass(ActivityA.this,FragmentActivity.class);
                 intent.setClass(ActivityA.this,ActivityB.class);
                 ActivityA.this.startActivity(intent);
+
+
             }
         });
 

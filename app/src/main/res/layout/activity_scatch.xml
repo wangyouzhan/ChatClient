@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyman="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_scatch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.imooc.wangyouzhan.chatclient.scratch.GuaGuaKa
+        android:id="@+id/id_guaguaka"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        hyman:text="$5000,000"
+        hyman:textColor="#ff00f0"
+        hyman:textSize="22sp">
+
+    </com.imooc.wangyouzhan.chatclient.scratch.GuaGuaKa>
+
+</RelativeLayout>

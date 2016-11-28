@@ -1,6 +1,7 @@
 package com.imooc.wangyouzhan.chatclient;
 
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -17,6 +18,12 @@ public class ContextTestActivity extends AppCompatActivity {
 
         Log.e("Test",getvalue(5) + "");
         Log.e("Test",getvalue(5000) + "");
+
+
+        Looper.prepare();
+
+        Looper.loop();
+
 
     }
 
