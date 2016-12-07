@@ -8,6 +8,8 @@
     <string name="scan">scan</string>
     <string name="scan_gbk">scan_gbk</string>
     <string name="scan_utf_8">scan_utf_8</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 
 
 </resources>
