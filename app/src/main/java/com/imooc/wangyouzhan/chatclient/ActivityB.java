@@ -26,6 +26,9 @@ public class ActivityB extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
 
 
+        getActionBar().setDisplayShowHomeEnabled(true);
+
+
     }
 
 

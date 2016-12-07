@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <attr name="visible_tab_count" format="integer"></attr>
-    
+
     <declare-styleable name="ViewPagerIndicator">
         <attr name="visible_tab_count"/>
     </declare-styleable>
@@ -17,6 +17,41 @@
         <attr name="textSize"/>
     </declare-styleable>
 
+    <attr name="icon_two" format="reference"></attr>
+    <attr name="color_two" format="color"></attr>
+    <attr name="text_two" format="string"></attr>
+    <attr name="text_size" format="dimension"></attr>
+
+    <declare-styleable name="ChangeColorIconWithText">
+        <attr name="icon_two"></attr>
+        <attr name="color_two"></attr>
+        <attr name="text_two"></attr>
+        <attr name="text_size"></attr>
+    </declare-styleable>
 
 
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

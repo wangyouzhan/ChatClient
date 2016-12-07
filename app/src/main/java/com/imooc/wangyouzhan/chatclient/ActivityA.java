@@ -13,6 +13,7 @@ public class ActivityA extends AppCompatActivity{
         setContentView(R.layout.content_activity);
 
 
+
         findViewById(R.id.btn_onclick).setOnClickListener(new View.OnClickListener() {
             @Override
 

@@ -17,6 +17,7 @@ public class ScatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scatch);
 
 
+
         id_guaguaka = (GuaGuaKa) findViewById(R.id.id_guaguaka);
         id_guaguaka.setOnGuaGuaKaCompleteListener(new GuaGuaKa.OnGuaGuaKaCompleteListener() {
             @Override

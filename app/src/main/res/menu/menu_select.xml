@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+    <item
+        android:id="@+id/action_setting5"
+        android:icon="@mipmap/home_hot"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="扫一扫"></item>
+
+
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@mipmap/icon_app"
+        android:title="扫一扫"></item>
+
+    <item
+        android:id="@+id/action_setting2"
+        android:icon="@mipmap/icon_app"
+        android:title="发起群聊"></item>
+    <item
+        android:id="@+id/action_setting3"
+        android:icon="@mipmap/icon_app"
+        android:title="意见反馈"></item>
+
+
+</menu>

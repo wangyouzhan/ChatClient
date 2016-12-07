@@ -25,6 +25,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
         <activity android:name=".MainActivity"/>
         <activity
             android:name=".ReadFileActivity"
@@ -116,9 +117,12 @@
         <activity android:name=".recycleview.RefreshRecyclerViewActivity">
         </activity>
         <activity android:name=".view.ScrollerViewActivity">
-
         </activity>
         <activity android:name=".scratch.ScatchActivity">
+
+        </activity>
+        <activity android:name=".Activity.BottomTabsActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
