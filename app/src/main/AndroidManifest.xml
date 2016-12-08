@@ -115,25 +115,27 @@
         </activity>
         <activity android:name=".recycleview.RefreshRecyclerViewActivity">
         </activity>
-
         <activity android:name=".view.ScrollerViewActivity">
         </activity>
 
-        <!--刮刮乐-->
+        <!-- 刮刮乐 -->
         <activity android:name=".scratch.ScatchActivity">
         </activity>
 
-        <!--模仿微信的bottom tabs 滑动切换-->
+        <!-- 模仿微信的bottom tabs 滑动切换 -->
         <activity
             android:name=".Activity.BottomTabsActivity"
             android:theme="@style/AppTheme">
-
         </activity>
 
-        <!--抽屉Activity-->
-        <activity android:name=".Activity.SlidingMenuActivity"
+        <!-- 抽屉Activity -->
+        <activity
+            android:name=".Activity.SlidingMenuActivity"
             android:theme="@style/AppTheme">
+        </activity>
 
+        <!--流式布局-->
+        <activity android:name=".Activity.FlowLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
