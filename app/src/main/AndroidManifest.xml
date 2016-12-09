@@ -136,9 +136,13 @@
 
         <!-- 流式布局 -->
         <activity android:name=".Activity.FlowLayoutActivity">
-
         </activity>
         <activity android:name=".Activity.ZoomActivity">
+        </activity>
+        <activity android:name=".Activity.LuckyPanActivity">
+
+        </activity>
+        <activity android:name=".Activity.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
