@@ -1,7 +1,9 @@
 package com.imooc.wangyouzhan.chatclient.Activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -47,10 +49,27 @@ public class AnimatorActivity extends AppCompatActivity {
 //                ObjectAnimator.ofFloat(imageView,"translationX", imageView.getX(), imageView.getX() + 200).setDuration(2000).start();
 //                ObjectAnimator.ofFloat(imageView,"translationY", imageView.getY(), imageView.getY() + 200).setDuration(2000).start();
 //                ObjectAnimator.ofFloat(imageView,"rotation",0, 360).setDuration(2000).start();
-                PropertyValuesHolder p1 = PropertyValuesHolder.ofFloat("translationX", 0, 300);
-                PropertyValuesHolder p2 = PropertyValuesHolder.ofFloat("translationY", 0, 300);
-                PropertyValuesHolder p3 = PropertyValuesHolder.ofFloat("rotation", 0 , 360);
-                ObjectAnimator.ofPropertyValuesHolder(imageView, p1, p2, p3).setDuration(3000).start();
+
+
+//                PropertyValuesHolder p1 = PropertyValuesHolder.ofFloat("translationX", 0, 300);
+//                PropertyValuesHolder p2 = PropertyValuesHolder.ofFloat("translationY", 0, 300);
+//                PropertyValuesHolder p3 = PropertyValuesHolder.ofFloat("rotation", 0 , 360);
+//                ObjectAnimator.ofPropertyValuesHolder(imageView, p1, p2, p3).setDuration(3000).start();
+
+             ObjectAnimator objectAnimator1 =  ObjectAnimator.ofFloat(imageView,"translationX", imageView.getX(), imageView.getX() + 200).setDuration(2000);
+                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(imageView,"translationY", imageView.getY(), imageView.getY() + 200).setDuration(2000);
+                ObjectAnimator objectAnimator3 =   ObjectAnimator.ofFloat(imageView,"rotation",0, 360).setDuration(2000);
+                AnimatorSet set = new AnimatorSet();
+//                set.playSequentially(objectAnimator1, objectAnimator2, objectAnimator3);
+                set.playTogether(objectAnimator1, objectAnimator2, objectAnimator3);
+                set.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        Toast.makeText(getApplicationContext(),"ddddd", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                set.start();
 
             }
         });
