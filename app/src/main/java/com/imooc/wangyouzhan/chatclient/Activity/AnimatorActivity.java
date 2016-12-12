@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -58,10 +59,11 @@ public class AnimatorActivity extends AppCompatActivity {
 
              ObjectAnimator objectAnimator1 =  ObjectAnimator.ofFloat(imageView,"translationX", imageView.getX(), imageView.getX() + 200).setDuration(2000);
                 ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(imageView,"translationY", imageView.getY(), imageView.getY() + 200).setDuration(2000);
+                objectAnimator2.setInterpolator(new BounceInterpolator());
                 ObjectAnimator objectAnimator3 =   ObjectAnimator.ofFloat(imageView,"rotation",0, 360).setDuration(2000);
                 AnimatorSet set = new AnimatorSet();
-//                set.playSequentially(objectAnimator1, objectAnimator2, objectAnimator3);
-                set.playTogether(objectAnimator1, objectAnimator2, objectAnimator3);
+                set.playSequentially(objectAnimator1, objectAnimator2, objectAnimator3);
+//                set.playTogether(objectAnimator1, objectAnimator2, objectAnimator3);
                 set.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
