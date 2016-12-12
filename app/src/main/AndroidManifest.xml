@@ -140,9 +140,12 @@
         <activity android:name=".Activity.ZoomActivity">
         </activity>
         <activity android:name=".Activity.LuckyPanActivity">
-
         </activity>
         <activity android:name=".Activity.AnimationActivity">
+
+        </activity>
+        <activity android:name=".Activity.AnimatorActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
