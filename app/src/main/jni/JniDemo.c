@@ -2,6 +2,7 @@
 #include <android/log.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 JNIEXPORT jstring JNICALL
 Java_com_imooc_wangyouzhan_chatclient_Activity_NDKActivity_hello(JNIEnv *env, jobject instance) {
@@ -52,6 +53,7 @@ Java_com_imooc_wangyouzhan_chatclient_Activity_NDKActivity_updateFile(JNIEnv *en
 
     if(file != NULL){
         fclose(file);
+
     }
 
 

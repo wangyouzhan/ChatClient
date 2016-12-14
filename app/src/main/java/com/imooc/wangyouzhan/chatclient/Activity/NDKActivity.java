@@ -32,7 +32,6 @@ public class NDKActivity extends AppCompatActivity {
                 Log.w("dd", Environment.getExternalStorageDirectory().getAbsolutePath());
                 String flag = updateFile(Environment.getExternalStorageDirectory().getAbsolutePath() + "/body.txt");
 
-
             }
         });
     }

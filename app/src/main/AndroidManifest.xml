@@ -144,9 +144,14 @@
         <activity android:name=".Activity.AnimationActivity">
         </activity>
         <activity android:name=".Activity.AnimatorActivity">
-
         </activity>
         <activity android:name=".Activity.NDKActivity">
+        </activity>
+        <activity android:name=".Activity.DrawableActivity">
+
+        </activity>
+        <activity android:name=".Activity.ViewPagerFragmentActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
