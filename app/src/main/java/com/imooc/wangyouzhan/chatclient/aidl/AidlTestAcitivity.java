@@ -18,7 +18,6 @@ import com.imooc.wangyouzhan.chatclient.R;
 public class AidlTestAcitivity extends AppCompatActivity implements View.OnClickListener {
 
 
-
     private Button btn_result;
     private EditText et_two;
     private EditText et_one;

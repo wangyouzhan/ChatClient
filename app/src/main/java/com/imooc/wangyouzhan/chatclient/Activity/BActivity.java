@@ -16,6 +16,7 @@ public class BActivity extends AppCompatActivity {
         setContentView(R.layout.activity_b2);
 
 
+
         TextView textView = (TextView) findViewById(R.id.tv_show_msg);
         textView.setText(String.format("TaskId:%d\n currentActivity id %s",getTaskId(), toString()));
 
@@ -34,6 +35,7 @@ public class BActivity extends AppCompatActivity {
                 startActivity(new Intent(BActivity.this, BActivity.class));
             }
         });
+
 
     }
 }
