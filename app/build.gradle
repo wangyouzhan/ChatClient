@@ -11,7 +11,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        ndk{
+        ndk {
             moduleName "JniDemo"
             ldLibs "log", "z", "m"
             abiFilters "armeabi", "armeabi-v7a", "x86"
@@ -24,6 +24,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    productFlavors {
+        xiaomi {}
+        wandoujia {}
+        c360 {}
+        baidu {}
+        huawei {}
+        yingyongbao {}
+        oppo {}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+    }
+
 }
 
 dependencies {

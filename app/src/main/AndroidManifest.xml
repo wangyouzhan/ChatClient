@@ -25,6 +25,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}"/>
+
         <activity android:name=".MainActivity"/>
         <activity
             android:name=".ReadFileActivity"
@@ -148,10 +152,11 @@
         <activity android:name=".Activity.NDKActivity">
         </activity>
         <activity android:name=".Activity.DrawableActivity">
-
         </activity>
         <activity android:name=".Activity.ViewPagerFragmentActivity">
 
+        </activity>
+        <activity android:name=".Activity.WebViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
